@@ -12,6 +12,7 @@ Unfortunately the SAS controller isn't supported in OS X, it only supports 2TB d
 * PCIe x1 Wireless WIFI Card for Broadcom BCM94360CD / BCM94331CD
 * Various SATA SSD Drives
 * Various SAS Hard Drives
+* 8GB (or greater) USB Flash Drive
 
 
 ## Software
@@ -58,11 +59,37 @@ I think you can use [FreeDOS](http://www.freedos.org/) for both of these.
 
 ## Install
 
-You'll need an 8+GB flash drive.
+### Pre-Install
 
 From another Mac, put your copy of El Capitan in the Applications folder.  Rename it to `Install OS X El Capitan.app` if it is named something else.
 
 Open the **Clover DELL Precision 690** app. Go through the steps, if it errors out, your copy of El Capitan is garbage, go find another one. It should take a pretty long time to copy everything over, like 10-15 minutes.
 
 When finished, make a folder on it called **690** or whatever you want, copy all of the stuff you downloaded to that folder including the **Clover DELL Precision 690** app.
+
+### Dell BIOS Settings
+
+| Option           | Setting                                      |
+| ---------------  | -------------------------------------------- |
+| VIDEO            | PEG                                          |
+| SAS              | OFF                                          |
+| Diskette         | OFF                                          |
+| FAST BOOT        | ON                                           |
+| SATA             | AHCI                                         |
+| FSB OPTIMIZATION | ON                                           |
+| SPEED STEP       | ON                                           |
+
+### Dell Install
+
+Insert the USB Flash Drive in your Dell and boot from it.
+
+When you get to Clover, be sure to boot from the USB Stick.
+
+After it reboots in Clover boot from the hard drive or SSD.
+
+Once you're at the desktop re-run the **Clover DELL Precision 690** app to install Clover into your system's EFI.
+
+Install all of the drivers.
+
+Reboot and you should be good to go.
 
